@@ -11,7 +11,7 @@ public interface IConsumeContext<out TMessage> : IConsumeContext
 public interface IConsumeContext
 {
     object Message { get; }
-    IDictionary<string, object?> Headers { get; }
+    IDictionary<string, object> Headers { get; }
     ActivityContext? ParentContext { get; set; }
     Guid MessageId { get; }
     string MessageType { get; }

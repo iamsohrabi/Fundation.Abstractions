@@ -10,7 +10,7 @@ public interface IBusConsumer
     /// <typeparam name="TMessage">A type that implements the <see cref="IMessage"/>.</typeparam>
     void Consume<TMessage>(
         IMessageHandler<TMessage> handler,
-        Action<IConsumeConfigurationBuilder>? consumeBuilder = null)
+        Action<IConsumeConfigurationBuilder> consumeBuilder = null)
         where TMessage : class, IMessage;
 
     /// <summary>
@@ -21,7 +21,7 @@ public interface IBusConsumer
     /// <typeparam name="TMessage">A type that implements the <see cref="IMessage"/>.</typeparam>
     void Consume<TMessage>(
         MessageHandler<TMessage> subscribeMethod,
-        Action<IConsumeConfigurationBuilder>? consumeBuilder = null)
+        Action<IConsumeConfigurationBuilder> consumeBuilder = null)
         where TMessage : class, IMessage;
 
     /// <summary>

@@ -12,7 +12,7 @@ public interface IMessagePersistenceRepository
         Expression<Func<StoreMessage, bool>> predicate,
         CancellationToken cancellationToken = default);
 
-    Task<StoreMessage?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
+    Task<StoreMessage> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
 
     Task<bool> RemoveAsync(StoreMessage storeMessage, CancellationToken cancellationToken = default);
 

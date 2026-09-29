@@ -9,12 +9,12 @@ public interface IEventMapper : IIDomainNotificationEventMapper, IIntegrationEve
 
 public interface IIDomainNotificationEventMapper
 {
-    IReadOnlyList<IDomainNotificationEvent?>? MapToDomainNotificationEvents(IReadOnlyList<IDomainEvent> domainEvents);
-    IDomainNotificationEvent? MapToDomainNotificationEvent(IDomainEvent domainEvent);
+    IReadOnlyList<IDomainNotificationEvent> MapToDomainNotificationEvents(IReadOnlyList<IDomainEvent> domainEvents);
+    IDomainNotificationEvent MapToDomainNotificationEvent(IDomainEvent domainEvent);
 }
 
 public interface IIntegrationEventMapper
 {
-    IReadOnlyList<IIntegrationEvent?>? MapToIntegrationEvents(IReadOnlyList<IDomainEvent> domainEvents);
-    IIntegrationEvent? MapToIntegrationEvent(IDomainEvent domainEvent);
+    IReadOnlyList<IIntegrationEvent> MapToIntegrationEvents(IReadOnlyList<IDomainEvent> domainEvents);
+    IIntegrationEvent MapToIntegrationEvent(IDomainEvent domainEvent);
 }

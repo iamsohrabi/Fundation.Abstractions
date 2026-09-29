@@ -15,7 +15,7 @@ public interface IAggregateStore
     /// <param name="aggregateId">Id of aggregate.</param>
     /// <param name="cancellationToken">Optional cancellation token.</param>
     /// <returns>Task with aggregate as result.</returns>
-    Task<TAggregate?> GetAsync<TAggregate, TId>(
+    Task<TAggregate> GetAsync<TAggregate, TId>(
         TId aggregateId,
         CancellationToken cancellationToken = default)
         where TAggregate : class, IEventSourcedAggregate<TId>, new();
@@ -31,7 +31,7 @@ public interface IAggregateStore
     /// <returns>Task of operation.</returns>
     Task<AppendResult> StoreAsync<TAggregate, TId>(
         TAggregate aggregate,
-        ExpectedStreamVersion? expectedVersion = null,
+        ExpectedStreamVersion expectedVersion = null,
         CancellationToken cancellationToken = default)
         where TAggregate : class, IEventSourcedAggregate<TId>, new();
 

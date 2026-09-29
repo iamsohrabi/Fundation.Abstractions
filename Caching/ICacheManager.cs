@@ -8,7 +8,7 @@ public interface ICacheManager
     /// <param name="key">The key.</param>
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
-    Task<T?> GetAsync<T>(string key);
+    Task<T> GetAsync<T>(string key);
 
     /// <summary>
     /// Gets data synchronously.
@@ -16,7 +16,7 @@ public interface ICacheManager
     /// <param name="key">The key.</param>
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
-    T? Get<T>(string key);
+    T Get<T>(string key);
 
     /// <summary>
     /// Sets data asynchronously.
@@ -66,7 +66,7 @@ public interface ICacheManager
     /// <param name="acquireAsync">The acquire asynchronous.</param>
     /// <param name="cacheTime">time in second format.</param>
     /// <returns></returns>
-    Task<T?> GetOrSetAsync<T>(string key, Func<Task<T>>? acquireAsync = null, int? cacheTime = null);
+    Task<T> GetOrSetAsync<T>(string key, Func<Task<T>> acquireAsync = null, int? cacheTime = null);
 
     /// <summary>Gets or sets data.</summary>
     /// <typeparam name="T"></typeparam>
@@ -74,7 +74,7 @@ public interface ICacheManager
     /// <param name="acquire">The acquire.</param>
     /// <param name="cacheTime">time in second format.</param>
     /// <returns></returns>
-    T? GetOrSet<T>(string key, Func<T>? acquire = null, int? cacheTime = null);
+    T GetOrSet<T>(string key, Func<T> acquire = null, int? cacheTime = null);
 
     /// <summary>Removes data from cache asynchronously.</summary>
     /// <param name="key">The key.</param>

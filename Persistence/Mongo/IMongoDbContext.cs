@@ -4,7 +4,7 @@ namespace Fundation.Abstractions.Persistence.Mongo;
 
 public interface IMongoDbContext : IDisposable
 {
-    IMongoCollection<T> GetCollection<T>(string? name = null);
+    IMongoCollection<T> GetCollection<T>(string name = null);
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     Task BeginTransactionAsync(CancellationToken cancellationToken = default);
     Task CommitTransactionAsync(CancellationToken cancellationToken = default);

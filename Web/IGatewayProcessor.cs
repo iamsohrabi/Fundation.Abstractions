@@ -3,7 +3,6 @@ using Fundation.Abstractions.CQRS.Command;
 using Fundation.Abstractions.CQRS.Query;
 using Fundation.Abstractions.Messaging;
 using Fundation.Abstractions.Web.Module;
-using MediatR;
 
 namespace Fundation.Abstractions.Web;
 

@@ -22,7 +22,7 @@ public interface IEventStore
     /// <returns>Task with events for aggregate.</returns>
     Task<IEnumerable<IStreamEvent>> GetStreamEventsAsync(
         string streamId,
-        StreamReadPosition? fromVersion = null,
+        StreamReadPosition fromVersion = null,
         int maxCount = int.MaxValue,
         CancellationToken cancellationToken = default);
 
@@ -35,7 +35,7 @@ public interface IEventStore
     /// <returns>Task with events for aggregate.</returns>
     Task<IEnumerable<IStreamEvent>> GetStreamEventsAsync(
         string streamId,
-        StreamReadPosition? fromVersion = null,
+        StreamReadPosition fromVersion = null,
         CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -89,7 +89,7 @@ public interface IEventStore
     /// <typeparam name="TAggregate"></typeparam>
     /// <typeparam name="TId"></typeparam>
     /// <returns></returns>
-    Task<TAggregate?> AggregateStreamAsync<TAggregate, TId>(
+    Task<TAggregate> AggregateStreamAsync<TAggregate, TId>(
         string streamId,
         StreamReadPosition fromVersion,
         TAggregate defaultAggregateState,
@@ -107,7 +107,7 @@ public interface IEventStore
     /// <typeparam name="TAggregate"></typeparam>
     /// <typeparam name="TId"></typeparam>
     /// <returns></returns>
-    Task<TAggregate?> AggregateStreamAsync<TAggregate, TId>(
+    Task<TAggregate> AggregateStreamAsync<TAggregate, TId>(
         string streamId,
         TAggregate defaultAggregateState,
         Action<object> fold,

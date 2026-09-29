@@ -12,7 +12,7 @@ namespace Fundation.Abstractions.Messaging.PersistMessage;
 public interface IMessagePersistenceService
 {
     Task<IReadOnlyList<StoreMessage>> GetByFilterAsync(
-        Expression<Func<StoreMessage, bool>>? predicate = null,
+        Expression<Func<StoreMessage, bool>> predicate = null,
         CancellationToken cancellationToken = default);
 
     Task AddPublishMessageAsync<TMessageEnvelope>(

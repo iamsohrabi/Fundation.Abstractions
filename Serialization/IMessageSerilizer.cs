@@ -4,8 +4,6 @@ namespace Fundation.Abstractions.Serialization;
 
 public interface IMessageSerializer : ISerializer
 {
-    string ContentType { get; }
-
     /// <summary>
     /// Serializes the given <see cref="MessageEnvelope"/> into a string
     /// </summary>
@@ -21,7 +19,7 @@ public interface IMessageSerializer : ISerializer
     /// </summary>
     /// <param name="json">a json data to deserialize to a messageEnvelope.</param>
     /// <returns>return a messageEnvelope type.</returns>
-    MessageEnvelope? Deserialize(string json);
+    MessageEnvelope Deserialize(string json);
 
     /// <summary>
     /// Deserialize the given byte array back into a message.
@@ -29,7 +27,7 @@ public interface IMessageSerializer : ISerializer
     /// <param name="data"></param>
     /// <param name="payloadType"></param>
     /// <returns></returns>
-    IMessage? Deserialize(ReadOnlySpan<byte> data, string payloadType);
+    IMessage Deserialize(ReadOnlySpan<byte> data, string payloadType);
 
     /// <summary>
     ///  Deserialize the given string into a <see cref="TMessage"/>.
@@ -37,7 +35,7 @@ public interface IMessageSerializer : ISerializer
     /// <param name="message"></param>
     /// <typeparam name="TMessage"></typeparam>
     /// <returns></returns>
-    TMessage? Deserialize<TMessage>(string message)
+    TMessage Deserialize<TMessage>(string message)
         where TMessage : IMessage;
 
     /// <summary>
@@ -46,5 +44,5 @@ public interface IMessageSerializer : ISerializer
     /// <param name="payload"></param>
     /// <param name="payloadType"></param>
     /// <returns></returns>
-    object? Deserialize(string payload, string payloadType);
+    object Deserialize(string payload, string payloadType);
 }
