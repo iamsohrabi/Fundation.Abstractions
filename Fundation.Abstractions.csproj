@@ -4,7 +4,15 @@
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+    
     <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
+        <PackageId>Fundation.Abstractions</PackageId>
+    <Version>1.0.0</Version>
+
+    <Authors>Mehrdad Sohrabi</Authors>
+    <Description>Core contracts and types for building .NET services based on domain-driven design, CQRS, events, messaging, and persistence abstractions.</Description>
+
+    <PackageOutputPath>../Packages</PackageOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
